@@ -1,0 +1,20 @@
+==== mashm ====
+low-tech keymash mechanism
+
+BUILD-TIME REQUIREMENTS
+- cargo
+- internet, probably
+
+BUILDING
+$ cargo build --release
+the binary is output in `target/release/mashm`
+
+INSTALLATION
+a couple options:
+- copy `target/release/mashm` to a directory in `$PATH`
+- $ cargo install --path .
+  - you will need to add `$HOME/.cargo/bin` to `$PATH`
+
+USAGE
+$ mashm # generates a 20-char keymash
+$ mashm -l1000 # generates a 1000-char keymash
