@@ -1,8 +1,9 @@
 ==== mashm ====
-low-tech keymash mechanism
+low-tech keymash mechanism: generates keymashes on demand
 
 ==== mashx ====
-dangerous X11-enriched mashm extension
+dangerous X11-enriched mashm extension: automatically types keymashes into
+your programs (read "WARNINGS")
 
 
 
@@ -19,18 +20,20 @@ the binaries are output in `target/release/{mashm,mashx}`
 
 
 
+RUNNING
+$ mashm # prints a 20-char keymash to stdout
+$ mashm -l1000 # prints a 1000-char keymash to stdout
+$ mashx # automatically types a 20-char keymash (read "WARNINGS")
+        # attach to a keybind for extra fun
+-h can be used on either binary
+
+
+
 INSTALLATION
 a couple options:
 - copy `target/release/{mashm,mashx}` to a directory in `$PATH`
 - $ cargo install --path .
   - you will need to add `$HOME/.cargo/bin` to `$PATH`
-
-
-
-USAGE
-$ mashm # generates a 20-char keymash
-$ mashm -l1000 # generates a 1000-char keymash
-$ mashx # attach this to a keybind for extra fun
 
 
 
