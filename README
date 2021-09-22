@@ -1,20 +1,43 @@
 ==== mashm ====
 low-tech keymash mechanism
 
-BUILD-TIME REQUIREMENTS
+==== mashx ====
+dangerous X11-enriched mashm extension
+
+
+
+REQUIREMENTS
 - cargo
 - internet, probably
+- (runtime, mashx) xdotool
+
+
 
 BUILDING
 $ cargo build --release
-the binary is output in `target/release/mashm`
+the binaries are output in `target/release/{mashm,mashx}`
+
+
 
 INSTALLATION
 a couple options:
-- copy `target/release/mashm` to a directory in `$PATH`
+- copy `target/release/{mashm,mashx}` to a directory in `$PATH`
 - $ cargo install --path .
   - you will need to add `$HOME/.cargo/bin` to `$PATH`
+
+
 
 USAGE
 $ mashm # generates a 20-char keymash
 $ mashm -l1000 # generates a 1000-char keymash
+$ mashx # attach this to a keybind for extra fun
+
+
+
+WARNINGS
+using mashx is unadvised:
+- pressing control or alt while mashx is typing can cause interesting results
+- letting mashx type in vim's normal mode or vim-like apps can cause
+  interesting results
+- releasing control or alt while mashx is typing causes X11 to erroneously
+  assume the key is still being held (tap the key to fix this)
